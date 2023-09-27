@@ -11,16 +11,30 @@ export default async ({ req, res, log, error }) => {
   //    .setKey(process.env.APPWRITE_API_KEY);
 
   // You can log messages to the console
-  log('Hello, Logs!');
+  log('Hello, Logsm Nick & Aditya!!!');
 
   // If something goes wrong, log an error
-  error('Hello, Errors!');
+  error('Hello, Errors! Oh no!');
 
   // The `req` object contains the request data
   if (req.method === 'GET') {
     // Send a response with the res object helpers
     // `res.send()` dispatches a string back to the client
-    return res.send('Hello, World!');
+    // return res.send('Hello, World!', 200);
+    // generate a random object of pokemon characters
+    const pokemon = [
+      {
+        name: 'Pikachu',
+        type: 'Electric',
+        image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png',
+      },
+      {
+        name: 'Charizard',
+        type: 'Fire',
+        image: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png',
+      }]
+
+    return res.json(pokemon);
   }
 
   // `res.json()` is a handy helper for sending JSON
